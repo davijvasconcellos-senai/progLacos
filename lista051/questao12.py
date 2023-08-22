@@ -6,3 +6,28 @@ digitados pelo usuário.A inserção de números deve parar quando o usuário di
 da média
 """
 
+num = float(input("Digite um número (-1 encerrra o programa): "))
+maior = num
+menor = num
+total_respostas = 0 # contador
+acum = 0
+
+while (num != -1):
+    acum = acum + num
+    total_respostas = total_respostas + 1
+
+    if (maior < num):
+        maior = num
+
+    if (menor > num):
+        menor = num
+
+    num = float(input("Digite outro número (-1 encerrra o programa): "))
+
+if (maior == -1):
+    print("Você inseriu -1 na primeira resposta.\nPROGRAMA ENCERRADO")
+else:
+    print(f"Maior valor inserido é {maior}.")
+    print(f"Menor valor inserido é {menor}.")
+    print(f"Média dos valores inseridos: {acum/total_respostas}")
+    print("FIM DO PROGRAMA")
